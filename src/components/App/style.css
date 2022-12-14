@@ -1,0 +1,66 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+nav,
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+ul {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  font-size: 24px;
+}
+
+main {
+  min-width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 25%;
+  z-index: -1;
+}
+
+.items_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 100%;
+}
+
+.items_list li {
+  min-width: 100%;
+  text-align: left;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+
+.completed {
+  color: grey;
+  text-decoration: line-through;
+}
+
+
+span {
+  display: block;
+}

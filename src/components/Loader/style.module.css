@@ -1,0 +1,14 @@
+.loader {
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    overflow: hidden;
+    z-index: 99;
+    font-size: 38px;
+    font-weight: 700;
+    color: blueviolet;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

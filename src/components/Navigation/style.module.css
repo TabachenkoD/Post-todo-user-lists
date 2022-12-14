@@ -1,0 +1,43 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(139, 130, 130);
+    min-height: 70px;
+    padding: 0 25%;
+}
+
+.item {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 8px 20px;
+}
+
+.active {
+    color: aqua;
+    border: 1px solid aqua;
+}
+
+.menu_list {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu_btn {
+    display: inline-block;
+    background: #bf1650;
+    text-transform: uppercase;
+    border: none;
+    min-width: 12rem;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 7px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu_btn:hover {
+    background: #e3447e;
+}

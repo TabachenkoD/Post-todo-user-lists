@@ -1,0 +1,36 @@
+.wrapper {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .2);
+    backdrop-filter: blur(10px);
+}
+
+.body {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    margin-top: 5%;
+    padding: 20px;
+    border-radius: 7px;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.close_block {
+    text-align: right;
+}
+
+.close_btn {
+    font-size: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+

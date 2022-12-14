@@ -1,0 +1,41 @@
+button,
+input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+}
+
+.titel_block {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid grey;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.titel_block h1 {
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    background: #bf1650;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 40px;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 10px;
+    height: 50px;
+    text-align: center;
+}
+
+button:hover {
+    background: #ec5990;
+}
