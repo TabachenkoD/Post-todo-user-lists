@@ -37,3 +37,12 @@
 .link:hover {
     background: #e3447e;
 }
+
+.btn{
+    margin-top: 10px;
+    padding: 0;
+    height: 22px;
+    min-width: 12rem;
+    font-size: 16px;
+    font-weight: 100;
+}

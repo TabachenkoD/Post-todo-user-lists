@@ -1,12 +1,15 @@
 import styles from '../UserItem/style.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapLocation, faGlobe, faPhone, faEnvelope, faAddressCard, faIdCard } from "@fortawesome/free-solid-svg-icons";
+import { faMapLocation, faGlobe, faPhone, faEnvelope, faAddressCard, faIdCard, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const UserMoreInfo = () => {
     const { users } = useSelector((state) => state.user);
     const { id } = useParams();
+    const navigate = useNavigate();
+
+    const goBack = () => navigate(-1);
     const user = users.find(user => user.id == id)
 
     return (
@@ -18,6 +21,7 @@ const UserMoreInfo = () => {
                 <li><FontAwesomeIcon icon={faPhone} className={styles.icon} /> <b>Phone:</b> {user.phone}</li>
                 <li><FontAwesomeIcon icon={faGlobe} className={styles.icon} /> <b>Website:</b> {user.website}</li>
                 <li><FontAwesomeIcon icon={faMapLocation} className={styles.icon} /> <b>Address:</b> {user.address.street}, {user.address.city}</li>
+                <li><button onClick={goBack} className={styles.btn}><FontAwesomeIcon icon={faArrowLeft} /> Back</button></li>
             </ul>
         </>
     )
