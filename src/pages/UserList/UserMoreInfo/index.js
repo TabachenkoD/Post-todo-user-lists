@@ -1,16 +1,24 @@
-import styles from './style.module.css';
-import { useOutletContext } from "react-router-dom";
+import styles from '../UserItem/style.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapLocation, faGlobe, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faMapLocation, faGlobe, faPhone, faEnvelope, faAddressCard, faIdCard } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 const UserMoreInfo = () => {
-    const [email, phone, website, street, city] = useOutletContext();
+    const { users } = useSelector((state) => state.user);
+    const { id } = useParams();
+    const user = users.find(user => user.id == id)
+
     return (
         <>
-            <li><FontAwesomeIcon icon={faEnvelope} className={styles.icon} /> <b>Email:</b> {email}</li>
-            <li><FontAwesomeIcon icon={faPhone} className={styles.icon} /> <b>Phone:</b> {phone}</li>
-            <li><FontAwesomeIcon icon={faGlobe} className={styles.icon} /> <b>Website:</b> {website}</li>
-            <li><FontAwesomeIcon icon={faMapLocation} className={styles.icon} /> <b>Address:</b> {street}, {city}</li>
+            <ul className={styles.user_list}>
+                <li><FontAwesomeIcon icon={faIdCard} className={styles.icon} /> <b>Name:</b> {user.name}</li>
+                <li><FontAwesomeIcon icon={faAddressCard} className={styles.icon} /> <b>Username:</b> {user.username}</li>
+                <li><FontAwesomeIcon icon={faEnvelope} className={styles.icon} /> <b>Email:</b> {user.email}</li>
+                <li><FontAwesomeIcon icon={faPhone} className={styles.icon} /> <b>Phone:</b> {user.phone}</li>
+                <li><FontAwesomeIcon icon={faGlobe} className={styles.icon} /> <b>Website:</b> {user.website}</li>
+                <li><FontAwesomeIcon icon={faMapLocation} className={styles.icon} /> <b>Address:</b> {user.address.street}, {user.address.city}</li>
+            </ul>
         </>
     )
 }
