@@ -15,9 +15,8 @@ function App() {
         <Route index element={<PostsList />} />
         <Route path='postslist' element={<PostsList />} />
         <Route path='todolist' element={<TodoList />} />
-        <Route path='userlist' element={<UserList />} >
-          <Route path=':id' element={<UserMoreInfo />} />
-        </Route>
+        <Route path='userlist' element={<UserList />} />
+        <Route path='userlist/:id' element={<UserMoreInfo />} />
         <Route path='*' element={<NotFound />} />
       </Route>
     </Routes>

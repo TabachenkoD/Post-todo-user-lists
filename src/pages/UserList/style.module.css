@@ -5,3 +5,52 @@
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
+
+.user_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100%;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.user_list li {
+    min-width: 100%;
+    text-align: left;
+}
+
+.icon {
+    color: #bf1650;
+    font-size: 20px;
+}
+
+.link {
+    color: white;
+    display: inline-block;
+    background: #bf1650;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    min-width: 12rem;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 7px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.link:hover {
+    background: #e3447e;
+}
+
+.btn {
+    margin-top: 10px;
+    padding: 0;
+    height: 22px;
+    min-width: 12rem;
+    font-size: 16px;
+    font-weight: 100;
+}
