@@ -1,10 +1,11 @@
-import './style.css';
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../components/Loader";
 import { getPosts } from "../../store/features/postSlice";
 import PostItem from './PostItem';
 import Modal from "../../components/Modal";
+
+import styles from './style.module.css';
 
 const PostsList = () => {
     const dispatch = useDispatch();
@@ -31,11 +32,11 @@ const PostsList = () => {
             {
                 !loading && posts.length ? (
                     <div className="container">
-                        <div className="titel_block">
+                        <div className={styles.titel}>
                             <h1>Posts List</h1>
-                            <button type="button" className="btn_for_modal" onClick={() => setModalActive(true)}>New Post</button>
+                            <button type="button" className={styles.btn} onClick={() => setModalActive(true)}>New Post</button>
                         </div>
-                        <ul className="items_list">
+                        <ul className={styles.items_list}>
                             {
                                 posts?.map((post) => (
                                     <PostItem key={post.id} post={post} />

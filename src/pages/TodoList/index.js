@@ -21,7 +21,7 @@ const TodoList = () => {
                 !loading && todos.length ? (
                     <div className="container">
                         <h1 className={styles.title}>To Do List</h1>
-                        <ul className="items_list">
+                        <ul className={styles.items_list}>
                             {
                                 todos?.map((todo) => (
                                     <TodoItem key={todo.id} todo={todo} />

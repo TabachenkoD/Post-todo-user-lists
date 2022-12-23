@@ -37,30 +37,3 @@ main {
   padding: 0 25%;
   z-index: -1;
 }
-
-.items_list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 100%;
-}
-
-.items_list li {
-  min-width: 100%;
-  text-align: left;
-  border: 1px solid black;
-  border-radius: 3px;
-  margin: 5px 0;
-  padding: 5px;
-}
-
-
-.completed {
-  color: grey;
-  text-decoration: line-through;
-}
-
-
-span {
-  display: block;
-}
