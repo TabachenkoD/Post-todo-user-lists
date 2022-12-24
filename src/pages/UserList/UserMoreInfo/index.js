@@ -7,11 +7,13 @@ import styles from '../style.module.css';
 
 const UserMoreInfo = () => {
     const { users } = useSelector((state) => state.user);
-    const { id } = useParams();
-    const navigate = useNavigate();
+    let { id } = useParams();
+    id = Number(id);
 
+    const navigate = useNavigate();
     const goBack = () => navigate(-1);
-    const user = users.find(user => user.id == id)
+
+    const user = users.find(user => user.id === id)
 
     return (
         <div className='container'>

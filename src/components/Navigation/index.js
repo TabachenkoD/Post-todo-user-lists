@@ -8,9 +8,9 @@ const Navigation = () => {
         <>
             <nav>
                 <ul className={styles.menu_list}>
-                    <li className={styles.menu_btn}><NavLink className={setClass} to='/postslist'>Posts List</NavLink></li>
-                    <li className={styles.menu_btn}><NavLink className={setClass} to='/todolist'>To do List</NavLink></li>
-                    <li className={styles.menu_btn}><NavLink className={setClass} to='/userlist'>User List</NavLink></li>
+                    <li className={styles.menu_btn}><NavLink className={setClass} to='/posts'>Posts List</NavLink></li>
+                    <li className={styles.menu_btn}><NavLink className={setClass} to='/todos'>To do List</NavLink></li>
+                    <li className={styles.menu_btn}><NavLink className={setClass} to='/users'>User List</NavLink></li>
                 </ul>
             </nav>
             <main>

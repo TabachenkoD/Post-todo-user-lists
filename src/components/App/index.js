@@ -13,10 +13,10 @@ function App() {
     <Routes>
       <Route path='/' element={<Navigation />}>
         <Route index element={<PostsList />} />
-        <Route path='postslist' element={<PostsList />} />
-        <Route path='todolist' element={<TodoList />} />
-        <Route path='userlist' element={<UserList />} />
-        <Route path='userlist/:id' element={<UserMoreInfo />} />
+        <Route path='posts' element={<PostsList />} />
+        <Route path='todos' element={<TodoList />} />
+        <Route path='users' element={<UserList />} />
+        <Route path='users/:id' element={<UserMoreInfo />} />
         <Route path='*' element={<NotFound />} />
       </Route>
     </Routes>
