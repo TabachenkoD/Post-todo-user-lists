@@ -5,7 +5,7 @@ import Navigation from '../Navigation';
 import PostsList from '../../pages/PostsList';
 import TodoList from '../../pages/TodoList';
 import UserList from '../../pages/UserList';
-import UserMoreInfo from '../../pages/UserList/UserMoreInfo';
+import UserDetails from '../../pages/UserList/UserDetails';
 import NotFound from '../../pages/404';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route path='posts' element={<PostsList />} />
         <Route path='todos' element={<TodoList />} />
         <Route path='users' element={<UserList />} />
-        <Route path='users/:id' element={<UserMoreInfo />} />
+        <Route path='users/:id' element={<UserDetails />} />
         <Route path='*' element={<NotFound />} />
       </Route>
     </Routes>
