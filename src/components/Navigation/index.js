@@ -6,7 +6,7 @@ const Navigation = () => {
 
     return (
         <>
-            <nav>
+            <nav className={styles.nav}>
                 <ul className={styles.menu_list}>
                     <li className={styles.menu_btn}><NavLink className={setClass} to='/posts'>Posts List</NavLink></li>
                     <li className={styles.menu_btn}><NavLink className={setClass} to='/todos'>To do List</NavLink></li>

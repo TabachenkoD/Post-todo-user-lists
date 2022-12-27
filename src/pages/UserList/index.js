@@ -13,7 +13,7 @@ const UserList = () => {
     useEffect(() => {
         dispatch(getUsers())
     }, [])
-
+    
     return <div className="container">
             {loading && <Loader />}
             {

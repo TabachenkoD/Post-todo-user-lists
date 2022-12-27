@@ -10,7 +10,7 @@ const initialState = {
 
 export const getPosts = createAsyncThunk('posts/getPosts',
     async (_, { dispatch, rejectWithValue }) => {
-        const res = await fetchUrl("posts?_limit=20");
+        const res = await fetchUrl("posts?_limit=40");
 
         if (typeof (res) === "object") {
             dispatch(setPost(res));

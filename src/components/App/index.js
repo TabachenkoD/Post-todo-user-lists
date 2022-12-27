@@ -16,7 +16,11 @@ function App() {
         <Route path='posts' element={<PostsList />} />
         <Route path='todos' element={<TodoList />} />
         <Route path='users' element={<UserList />} />
-        <Route path='users/:id' element={<UserDetails />} />
+        <Route path='users/:id' element={<UserDetails />} >
+          <Route path='albums' element={<p>Albums</p>} />
+          <Route path='todos' element={<p>Todos</p>} />
+          <Route path='posts' element={<p>Posts</p>} />
+        </Route>
         <Route path='*' element={<NotFound />} />
       </Route>
     </Routes>

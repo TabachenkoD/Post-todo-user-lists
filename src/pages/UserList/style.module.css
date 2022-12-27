@@ -64,3 +64,59 @@
 .btn:hover {
     background: #ec5990;
 }
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    min-height: 20px;
+    padding: 10px 0;
+}
+
+.item {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 8px 20px;
+}
+
+.active {
+    color: aqua;
+    border: 1px solid aqua;
+}
+
+.menu_list {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu_btn {
+    display: inline-block;
+    background: #bf1650;
+    text-transform: uppercase;
+    border: none;
+    min-width: 12rem;
+    font-size: 14px;
+    font-weight: 100;
+    letter-spacing: 7px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu_btn:hover {
+    background: #e3447e;
+}
+
+.more_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100%;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 5px 0;
+    padding: 5px;
+    padding-top: 0;
+}
