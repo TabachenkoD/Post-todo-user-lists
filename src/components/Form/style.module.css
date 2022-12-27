@@ -65,3 +65,8 @@ button:disabled {
 button:disabled:hover {
     background: #ec5990;
 }
+
+.user {
+    font-size: 16px;
+    padding: 10px 15px;
+}

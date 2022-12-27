@@ -11,7 +11,7 @@ const UserDetails = () => {
     const dispatch = useDispatch();
     const { user } = useSelector((state) => state.userDetails);
     const { id } = useParams();
-    
+
     const navigate = useNavigate();
     const goBack = () => navigate('/users');
 
@@ -37,8 +37,8 @@ const UserDetails = () => {
                 <nav className={styles.nav}>
                     <ul className={styles.menu_list}>
                         <li className={styles.menu_btn}><NavLink className={setClass} to='albums'>Albums</NavLink></li>
-                        <li className={styles.menu_btn}><NavLink className={setClass} to={'todos'}>Todos</NavLink></li>
-                        <li className={styles.menu_btn}><NavLink className={setClass} to={'posts'}>Posts</NavLink></li>
+                        <li className={styles.menu_btn}><NavLink className={setClass} to='todos'>Todos</NavLink></li>
+                        <li className={styles.menu_btn}><NavLink className={setClass} to='posts'>Posts</NavLink></li>
                     </ul>
                 </nav>
                 <div>

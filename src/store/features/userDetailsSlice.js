@@ -10,25 +10,13 @@ const initialState = {
 
 export const getUser = createAsyncThunk('user/getUser',
     async (id, { dispatch, rejectWithValue }) => {
-        /*  const res = await fetchUrl(`users/${id}`);
- 
-         if (typeof (res) === "object") {
-             dispatch(setUserDetails(res));
-         } else {
-             return rejectWithValue(res);
-         } */
+        const res = await fetchUrl(`users/${id}`);
 
-        try {
-            const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
-
-            if (response.statusText !== "OK" && response.status !== 200) {
-                throw new Error("Server error!");
-            }
-            return dispatch(setUserDetails(response.data))
-        } catch (error) {
-            return error.message;
+        if (typeof (res) === "object") {
+            dispatch(setUserDetails(res));
+        } else {
+            return rejectWithValue(res);
         }
-        
     })
 
 export const userDetailsSlice = createSlice({

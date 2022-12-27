@@ -7,6 +7,7 @@ import styles from './style.module.css';
 const Form = () => {
     const dispatch = useDispatch();
     const { loading, error } = useSelector((state) => state.post);
+    const { users } = useSelector((state) => state.user);
 
     const {
         register,
@@ -27,6 +28,14 @@ const Form = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
+            <label htmlFor='user' className={styles.titles}>User:</label>
+            <select className={styles.user} {...register('user')}>
+                {
+                    users?.map((user) => (
+                        <option key={user.id} value={user.id}>{user.name}</option>
+                    ))
+                }
+            </select>
             <label htmlFor='title' className={styles.titles}>Title:</label>
             <input className={styles.input} placeholder='Enter post title. (Max. length 50 symbols)'
                 {...register('title', {

@@ -2,12 +2,11 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../components/Loader";
 import { getPosts } from "../../store/features/postSlice";
+import { getUsers } from '../../store/features/userSlice';
 import PostItem from './PostItem';
 import Modal from "../../components/Modal";
 
 import styles from './style.module.css';
-
-import { getUsers } from '../../store/features/userSlice';
 
 const PostsList = () => {
     const dispatch = useDispatch();
@@ -31,9 +30,6 @@ const PostsList = () => {
         document.body.classList.remove('modal_open');
     }
 
-   /*  const userName = users.find(el => el.id == 3)
-    console.log(userName?.name) */
-
     return (
         <>
             {loading && <Loader />}
@@ -47,7 +43,7 @@ const PostsList = () => {
                         <ul className={styles.items_list}>
                             {
                                 posts?.map((post) => (
-                                    <PostItem key={post.id} post={post} userName={users.find(user => user.id == post.userId)} />
+                                    <PostItem key={post.id} post={post} user={users.find(user => user.id == post.userId)} />
                                 ))
                             }
                         </ul>
