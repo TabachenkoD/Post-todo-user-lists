@@ -8,6 +8,8 @@ import UserList from '../../pages/UserList';
 import UserDetails from '../../pages/UserList/UserDetails';
 import NotFound from '../../pages/404';
 import Albums from '../../pages/UserList/UserDetails/Albums';
+import Todos from '../../pages/UserList/UserDetails/Todos';
+import Posts from '../../pages/UserList/UserDetails/Posts';
 
 function App() {
   return (
@@ -19,8 +21,8 @@ function App() {
         <Route path='users' element={<UserList />} />
         <Route path='users/:id' element={<UserDetails />} >
           <Route path='albums' element={<Albums />} />
-          <Route path='todos' element={<p>Todos</p>} />
-          <Route path='posts' element={<p>Posts</p>} />
+          <Route path='todos' element={<Todos />} />
+          <Route path='posts' element={<Posts />} />
         </Route>
         <Route path='*' element={<NotFound />} />
       </Route>
