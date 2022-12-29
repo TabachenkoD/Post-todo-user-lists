@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import fetchUrl from "../../api/utils";
-import axios from "axios";
 
 const initialState = {
     loading: false,
     user: {},
+    albums: {},
     error: "",
 }
 
@@ -19,6 +19,17 @@ export const getUser = createAsyncThunk('user/getUser',
         }
     })
 
+export const getAlbums = createAsyncThunk('user/getUser',
+    async (id, { dispatch, rejectWithValue }) => {
+        const res = await fetchUrl(`users/${id}/albums`);
+
+        if (typeof (res) === "object") {
+            dispatch(setAlbums(res));
+        } else {
+            return rejectWithValue(res);
+        }
+    })
+
 export const userDetailsSlice = createSlice({
     name: 'userDetails',
     initialState,
@@ -26,6 +37,9 @@ export const userDetailsSlice = createSlice({
         setUserDetails: (state, action) => {
             state.user = action.payload
         },
+        setAlbums: (state, action) => {
+            state.albums = action.payload
+        }
     },
     extraReducers: {
         [getUser.pending]: (state) => {
@@ -38,8 +52,11 @@ export const userDetailsSlice = createSlice({
             state.loading = false;
             state.error = action.payload;
         },
+        [getAlbums.fulfilled]: (state) => {
+            state.loading = false;
+        }
     }
 })
 
-export const { setUserDetails } = userDetailsSlice.actions;
+export const { setUserDetails, setAlbums } = userDetailsSlice.actions;
 export default userDetailsSlice.reducer;
