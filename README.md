@@ -1,3 +1,4 @@
+*I update this project regularly. Keep for updates*
 # React SPA
 
 [This](https://post-todo-user-lists.vercel.app) is my tutorial project on React.    
