@@ -20,6 +20,7 @@ function App() {
         <Route path='todos' element={<TodoList />} />
         <Route path='users' element={<UserList />} />
         <Route path='users/:id' element={<UserDetails />} >
+          <Route index element={<Albums />} />
           <Route path='albums' element={<Albums />} />
           <Route path='todos' element={<Todos />} />
           <Route path='posts' element={<Posts />} />

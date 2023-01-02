@@ -7,13 +7,11 @@ import styles from '../style.module.css';
 const UserItem = ({ user }) => {
 
     return (
-        <>
-            <ul className={styles.user_list}>
-                <li><FontAwesomeIcon icon={faIdCard} className={styles.icon} /> <b>Name:</b> {user.name}</li>
-                <li><FontAwesomeIcon icon={faAddressCard} className={styles.icon} /> <b>Username:</b> {user.username}</li>
-                <li><NavLink key={user.id} to={`${user.id}`} className={styles.link}>More</NavLink></li>
-            </ul >
-        </>
+        <ul className={styles.user_list}>
+            <li><FontAwesomeIcon icon={faIdCard} className={styles.icon} /> <b>Name:</b> {user.name}</li>
+            <li><FontAwesomeIcon icon={faAddressCard} className={styles.icon} /> <b>Username:</b> {user.username}</li>
+            <li><NavLink key={user.id} to={`${user.id}`} className={styles.link}>More</NavLink></li>
+        </ul >
     )
 }
 

@@ -44,11 +44,23 @@ export const getTodos = createAsyncThunk('user/getTodos',
     })
 
 export const getPosts = createAsyncThunk('user/getPosts',
-    async (id, { dispatch, rejectWithValue }) => {
+    async (id, { dispatch, rejectWithValue, getState }) => {
         const res = await fetchUrl(`users/${id}/posts`);
 
         if (typeof (res) === "object") {
-            dispatch(setPosts(res));
+            const postState = getState().post.posts.filter(item => item.userId == id);
+
+            if (postState.length !== 0 && postState.length !== res.length) {
+                const test = postState.filter(post => res.every(item => item.title !== post.title));
+                
+                test.forEach(element => {
+                    res.unshift(element)
+                });
+
+                dispatch(setPosts(res));
+            } else {
+                dispatch(setPosts(res));
+            }
         } else {
             return rejectWithValue(res);
         }
@@ -69,7 +81,7 @@ export const userDetailsSlice = createSlice({
         },
         setPosts: (state, action) => {
             state.posts = action.payload
-        }
+        },
     },
     extraReducers: {
         [getUser.pending]: (state) => {
