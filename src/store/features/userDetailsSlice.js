@@ -45,24 +45,19 @@ export const getTodos = createAsyncThunk('user/getTodos',
 
 export const getPosts = createAsyncThunk('user/getPosts',
     async (id, { dispatch, rejectWithValue, getState }) => {
-        const res = await fetchUrl(`users/${id}/posts`);
+        const postState = getState().post.posts.filter(item => item.userId === Number(id));
 
-        if (typeof (res) === "object") {
-            const postState = getState().post.posts.filter(item => item.userId == id);
+        if (postState.length) {
+            dispatch(setPosts(postState));
 
-            if (postState.length !== 0 && postState.length !== res.length) {
-                const test = postState.filter(post => res.every(item => item.title !== post.title));
-                
-                test.forEach(element => {
-                    res.unshift(element)
-                });
+        } else {
+            const res = await fetchUrl(`users/${id}/posts`);
 
+            if (typeof (res) === "object") {
                 dispatch(setPosts(res));
             } else {
-                dispatch(setPosts(res));
+                return rejectWithValue(res);
             }
-        } else {
-            return rejectWithValue(res);
         }
     })
 
