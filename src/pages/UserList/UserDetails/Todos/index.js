@@ -13,7 +13,8 @@ const Todos = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        dispatch(getTodos(id))
+        /* dispatch(getTodos(id)) */
+        dispatch(getTodos(id));
     }, [])
 
     return (

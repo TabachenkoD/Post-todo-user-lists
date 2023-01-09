@@ -32,7 +32,7 @@ export const getAlbums = createAsyncThunk('user/getAlbums',
         }
     })
 
-export const getTodos = createAsyncThunk('user/getTodos',
+export const getTodosAPI = createAsyncThunk('user/getTodosAPI',
     async (id, { dispatch, rejectWithValue }) => {
         const res = await fetchUrl(`users/${id}/todos`);
 
@@ -42,6 +42,19 @@ export const getTodos = createAsyncThunk('user/getTodos',
             return rejectWithValue(res);
         }
     })
+
+export const getTodos = createAsyncThunk('user/getTodos',
+    async (id, { dispatch, getState }) => {
+        const todoState = getState().todo.todos.filter(todo => todo.userId === Number(id));
+
+        if (todoState.length) {
+            dispatch(setTodos(todoState))
+        } else {
+            dispatch(getTodosAPI(id));
+        }
+
+    }
+)
 
 export const getPosts = createAsyncThunk('user/getPosts',
     async (id, { dispatch, rejectWithValue, getState }) => {
@@ -59,7 +72,8 @@ export const getPosts = createAsyncThunk('user/getPosts',
                 return rejectWithValue(res);
             }
         }
-    })
+    }
+)
 
 export const userDetailsSlice = createSlice({
     name: 'userDetails',

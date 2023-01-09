@@ -15,11 +15,11 @@ const TodoList = () => {
     }, [])
 
     return (
-        <>
+        <div className="container">
             {loading && <Loader />}
             {
                 !loading && todos.length ? (
-                    <div className="container">
+                    <>
                         <h1 className={styles.title}>To Do List</h1>
                         <ul className={styles.items_list}>
                             {
@@ -28,15 +28,15 @@ const TodoList = () => {
                                 ))
                             }
                         </ul>
-                    </div>
+                    </>
                 ) : null
             }
             {
                 !loading && !todos.length ? (
-                    <div className="container">{error}</div>
+                    <>{error}</>
                 ) : null
             }
-        </>
+        </div>
     )
 }
 
