@@ -23,10 +23,9 @@ export const addNewPost = createAsyncThunk('posts/addNewPost',
     async (data, { dispatch, rejectWithValue }) => {
         try {
             const res = await axios.post(`https://jsonplaceholder.typicode.com/posts`, {
-                userId: Number(Object.values(data)[0]),
-                id: 1,
-                title: Object.values(data)[1],
-                body: Object.values(data)[2],
+                userId: Number(data.user),
+                title: data.title,
+                body: data.post,
             })
 
             if (typeof (res) === "object") {

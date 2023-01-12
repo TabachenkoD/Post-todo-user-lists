@@ -20,6 +20,25 @@ export const getTodos = createAsyncThunk('todos/getTodos',
     }
 )
 
+export const getUserTodos = createAsyncThunk('user/getUserTodos',
+    async (id, { dispatch, rejectWithValue, getState }) => {
+        const todoUserState = getState().todo.todos.filter(todo => todo.userId === Number(id));
+
+        if (todoUserState.length) {
+            dispatch(setTodo(todoUserState))
+        } else {
+            const res = await fetchUrl(`users/${id}/todos`);
+
+            if (typeof (res) === "object") {
+                dispatch(setTodo(res));
+            } else {
+                return rejectWithValue(res);
+            }
+        }
+
+    }
+)
+
 export const toggleStatus = createAsyncThunk('todos/toggleStatus',
     async (id, { dispatch, rejectWithValue, getState }) => {
         const todoState = getState().todo.todos.find(todo => todo.id === id);
@@ -34,7 +53,6 @@ export const toggleStatus = createAsyncThunk('todos/toggleStatus',
             }
 
             dispatch(toggleComplete({ id }));
-
         } catch (error) {
             return rejectWithValue(error.message)
         }

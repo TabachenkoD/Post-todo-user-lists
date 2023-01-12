@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTodos } from "../../../../store/features/userDetailsSlice";
+import { getUserTodos } from "../../../../store/features/todoSlice";
 import { useParams } from "react-router-dom";
 import TodosElement from "./TodosElement";
 import Loader from "../../../../components/Loader";
@@ -9,12 +9,11 @@ import styles from './style.module.css';
 
 const Todos = () => {
     const dispatch = useDispatch();
-    const { todos, loading, error } = useSelector((state) => state.userDetails);
+    const { todos, loading, error } = useSelector((state) => state.todo);
     const { id } = useParams();
 
     useEffect(() => {
-        /* dispatch(getTodos(id)) */
-        dispatch(getTodos(id));
+        dispatch(getUserTodos(id));
     }, [])
 
     return (

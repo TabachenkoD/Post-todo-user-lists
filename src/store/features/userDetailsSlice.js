@@ -5,7 +5,6 @@ const initialState = {
     loading: false,
     user: {},
     albums: {},
-    todos: {},
     posts: {},
     error: "",
 }
@@ -31,30 +30,6 @@ export const getAlbums = createAsyncThunk('user/getAlbums',
             return rejectWithValue(res);
         }
     })
-
-export const getTodosAPI = createAsyncThunk('user/getTodosAPI',
-    async (id, { dispatch, rejectWithValue }) => {
-        const res = await fetchUrl(`users/${id}/todos`);
-
-        if (typeof (res) === "object") {
-            dispatch(setTodos(res));
-        } else {
-            return rejectWithValue(res);
-        }
-    })
-
-export const getTodos = createAsyncThunk('user/getTodos',
-    async (id, { dispatch, getState }) => {
-        const todoState = getState().todo.todos.filter(todo => todo.userId === Number(id));
-
-        if (todoState.length) {
-            dispatch(setTodos(todoState))
-        } else {
-            dispatch(getTodosAPI(id));
-        }
-
-    }
-)
 
 export const getPosts = createAsyncThunk('user/getPosts',
     async (id, { dispatch, rejectWithValue, getState }) => {
@@ -85,9 +60,6 @@ export const userDetailsSlice = createSlice({
         setAlbums: (state, action) => {
             state.albums = action.payload
         },
-        setTodos: (state, action) => {
-            state.todos = action.payload
-        },
         setPosts: (state, action) => {
             state.posts = action.payload
         },
@@ -106,5 +78,5 @@ export const userDetailsSlice = createSlice({
     }
 })
 
-export const { setUserDetails, setAlbums, setTodos, setPosts } = userDetailsSlice.actions;
+export const { setUserDetails, setAlbums, setPosts } = userDetailsSlice.actions;
 export default userDetailsSlice.reducer;
