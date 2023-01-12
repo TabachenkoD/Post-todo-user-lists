@@ -9,8 +9,8 @@ While working on this project, I learned **React 18** and few libraries, such as
 * React Hook form
 * Axios    
 
-The main task was to work with [Fake Api](https://jsonplaceholder.typicode.com), the correct use of dynamic routes and nested routes,
-use one of the state managers - I chose the Redux Toolkit, work with the form at a more advanced level.
+The main task was to work with [fake api - Jsonplaceholder](https://jsonplaceholder.typicode.com), the correct use of dynamic routes and nested routes,
+use one of the state managers - I chose the Redux Toolkit, work with the form at a more advanced level, work with axios (get, post, patch requests).
 
      
 
