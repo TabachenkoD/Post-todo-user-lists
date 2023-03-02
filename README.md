@@ -15,4 +15,8 @@ use one of the state managers - I chose the Redux Toolkit, work with the form at
      
 
 ---
-_You can view this project by following this_ [link](https://post-todo-user-lists.vercel.app).
+_You can view this project by following this_ [link](https://post-todo-user-lists.vercel.app).    
+
+<img width="1904" alt="img" src="https://user-images.githubusercontent.com/120216296/222383400-5e73248e-6b11-41bd-8fe5-a7a481569aa9.png">
+
+
